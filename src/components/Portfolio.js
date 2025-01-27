@@ -160,7 +160,7 @@ const Portfolio = () => {
       <Toaster />
       <Navbar />
       {/* cursor */}
-      {Array.from({ length: 60 }).map((_, index) => (
+      {Array.from({ length: 40 }).map((_, index) => (
         <div
           key={index}
           className="circle"
