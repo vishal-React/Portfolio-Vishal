@@ -184,11 +184,7 @@ const Portfolio = () => {
                 </div>
               ))}
             </div>
-            <img
-              src="./assets/main.png"
-              alt="animated profile picture"
-              className="image"
-            />
+            <img src="./assets/main.png" className="image" />
             <FaReact className="con" />
             {/* loader */}
             <div className="container ">
