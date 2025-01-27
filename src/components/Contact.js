@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   useEffect(() => {
@@ -19,58 +20,78 @@ const Contact = () => {
     };
   }, []);
 
-  // const handlesub = ()=>{
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
 
-  // }
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: new FormData(form), // Automatically sets the correct Content-Type
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          toast.success("Message sent successfully!");
+          form.reset(); // Clear the form inputs after successful submission
+        } else {
+          toast.error("Failed to send message. Please try again.");
+          console.error("Web3Forms Error:", data.message);
+        }
+      })
+      .catch((error) => {
+        toast.error("An error occurred. Please try again.");
+        console.error("Error:", error);
+      });
+  };
 
   return (
     <>
-      <p className="section__text__p1 margin " id="contact">
-        Get in Touch
-      </p>
-      <h1 className="title">Contact Me</h1>
-      <div className="box-wrapper contact">
-        <div className="form-wrap">
-          <form action="https://api.web3forms.com/submit" method="POST">
-            <input
-              type="hidden"
-              name="access_key"
-              Value="e947004b-eca5-484d-a2eb-7a5914cb4f90"
-            />
-            <h2 className="form-title">Send us a message</h2>
-            <div className="form-fields">
-              <div className="oneLine">
-                <div className="form-group">
-                  <input
-                    type="text"
-                    className="fname"
-                    placeholder="Name"
-                    required
-                  />
+      <section id="contact" className="sec-1 show-animate">
+        <p className="section__text__p1 sec-3">Get in Touch</p>
+        <h1 className="title sec-3">Contact Me</h1>
+        <div className="box-wrapper contact animate">
+          <div className="form-wrap">
+            <form onSubmit={handleFormSubmit} method="POST">
+              <input
+                type="hidden"
+                name="access_key"
+                value="e947004b-eca5-484d-a2eb-7a5914cb4f90"
+              />
+              <h2 className="form-title">Send us a message</h2>
+              <div className="form-fields">
+                <div className="oneLine">
+                  <div className="form-group">
+                    <input
+                      type="text"
+                      name="name"
+                      className="fname"
+                      placeholder="Name"
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <input
+                      type="email"
+                      name="email"
+                      className="email"
+                      placeholder="Mail"
+                      required
+                    />
+                  </div>
                 </div>
-                <div className="form-group">
-                  <input
-                    type="email"
-                    className="email"
-                    placeholder="Mail"
+                <div className="form-groups">
+                  <textarea
+                    name="message"
+                    placeholder="Write your message"
                     required
                   />
                 </div>
               </div>
-              <div className="form-groups">
-                <textarea
-                  name="message"
-                  id=""
-                  placeholder="Write your message"
-                  required
-                />
-              </div>
-            </div>
-            {/* <button type="submit" className="submit-button" onClick={handlesub}>Submit</button> */}
-            <input type="submit" className="submit-button" />
-          </form>
+              <input type="submit" className="submit-button" value="Send" />
+            </form>
+          </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

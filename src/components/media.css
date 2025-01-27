@@ -1,0 +1,166 @@
+/* Mobile Styles */
+@media (max-width: 775px) {
+    .nav-links {
+        display: none;
+    }
+
+    .vislogo {
+        height: 55px;
+        width: 55px;
+        margin-top: 12px;
+    }
+
+    .humburgerNone {
+        display: inline-block;
+    }
+
+    #profile {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .section__text__p2 {
+        font-size: 30px;
+    }
+
+    .section__text__p1 {
+        font-size: 1rem;
+        font-weight: 100;
+    }
+
+    .section-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0rem;
+    }
+
+    .about-pic {
+        height: 300px;
+        width: 300px;
+    }
+
+    .icon {
+        display: none;
+    }
+
+    .work {
+        font-size: 18px;
+    }
+
+    .works {
+        font-size: 26px;
+    }
+
+    .vishal-colum {
+        flex-direction: column;
+    }
+
+    .about-containers {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .mera {
+        padding-right: 15px;
+        padding-left: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .experience-sub-title {
+        font-size: 1.25rem;
+    }
+
+    .text-container {
+        text-align: justify;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .form-title {
+        font-size: large;
+        letter-spacing: 0px;
+    }
+
+    .form-wrap {
+        width: 79%;
+    }
+
+    .form-group {
+        margin: 14px 6px;
+        padding: 0px 15px;
+    }
+
+    footer .footerNav {
+        flex-direction: column;
+        height: 285px;
+        align-items: center;
+    }
+
+    .nav-links-container {
+        padding-bottom: 0px;
+    }
+
+    footer p {
+        padding-bottom: 30px;
+    }
+
+    .rocket {
+        font-size: 30px;
+    }
+
+    .circle {
+        display: none;
+    }
+}
+
+@media (max-width: 360px) {
+    .form-groups textarea {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 515px) {
+    .container {
+        display: none;
+    }
+
+    nav {
+        height: 13vh;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .circle {
+        display: none;
+    }
+
+    .section-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0rem;
+        padding-right: 4rem;
+        padding-left: 4rem;
+    }
+    #profile {
+        flex-direction: column;
+    }
+    .about-containers {
+        padding-right: 4rem;
+        padding-left: 4rem;
+    }
+    .rocket {
+        font-size: 50px;
+    }
+}
+
+/* Laptop Styles */
+@media (min-width: 1025px) and (max-width: 1440px) {}
+
+/* Desktop Styles */
+@media (min-width: 1441px) {}

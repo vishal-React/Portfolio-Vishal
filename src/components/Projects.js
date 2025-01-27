@@ -1,24 +1,68 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Tilt from "react-parallax-tilt";
 import "./card.css";
+
 const Projects = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // in phone or tabs off tilt effect
   useEffect(() => {
-    let sections = document.querySelectorAll("section");
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
 
-    window.onscroll = () => {
-      sections.forEach((sec) => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 300;
-        let height = sec.offsetHeight;
+    // Check initial screen size
+    checkScreenSize();
 
-        if (top >= offset && top < offset + height) {
-          sec.classList.add("show-animate");
-        } else {
-          sec.classList.remove("show-animate");
-        }
-      });
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
     };
   }, []);
+
+  // card structure dynamic
+  const ProjectCard = ({
+    imgSrc,
+    characterSrc,
+    title,
+    githubLink,
+    demoLink,
+  }) => {
+    const CardContent = (
+      <div
+        className="details-container color-container animate"
+        style={{ "--i": 0 }}
+      >
+        <div className="article-container">
+          <div className="card">
+            <div className="wrapper">
+              <img src={imgSrc} className="cover-image" alt="Project Cover" />
+            </div>
+            <img src={characterSrc} className="character" alt="Character" />
+          </div>
+        </div>
+        <h2 className="experience-sub-title project-title">{title}</h2>
+        <div className="btn-container">
+          <button
+            className="btn btn-color-2 project-btn"
+            onClick={() => (window.location.href = githubLink)}
+          >
+            Github
+          </button>
+          <button
+            className="btn btn-color-2 project-btn"
+            onClick={() => (window.location.href = demoLink)}
+          >
+            Live Demo
+          </button>
+        </div>
+      </div>
+    );
+
+    // Conditionally wrap with Tilt
+    return isMobile ? CardContent : <Tilt>{CardContent}</Tilt>;
+  };
 
   return (
     <>
@@ -26,166 +70,43 @@ const Projects = () => {
         <p className="section__text__p1 sec-3">Browse My Recent</p>
         <h1 className="title sec-3">Projects</h1>
         <div className="experience-details-container">
-          <div className="about-containers">
-            {/* first project */}
-            <Tilt>
-              <div
-                className="details-container color-container animate"
-                style={{ "--i": 0 }}
-              >
-                <div className="article-container">
-                  <div className="card">
-                    <div className="wrapper">
-                      <img
-                        src="./assets/todo.png"
-                        className="cover-image "
-                        alt="Image 1"
-                      />
-                    </div>
-                    <img
-                      src="./assets/topng.png"
-                      className="character"
-                      alt="Image 2"
-                    />
-                  </div>
-                </div>
-                <h2 className="experience-sub-title project-title">
-                  To-Do-List
-                </h2>
-                <div className="btn-container">
-                  <button
-                    className="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/'"
-                  >
-                    Github
-                  </button>
-                  <button
-                    className="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/'"
-                  >
-                    Live Demo
-                  </button>
-                </div>
-              </div>
-            </Tilt>
-            {/* Second project */}
-            <Tilt>
-              <div
-                className="details-container color-container animate"
-                style={{ "--i": 1 }}
-              >
-                <div className="article-container">
-                  <div className="card">
-                    <div className="wrapper">
-                      <img
-                        src="./assets/we.png"
-                        className="cover-image "
-                        alt="Image 1"
-                      />
-                    </div>
-                    <img
-                      src="./assets/clo.png"
-                      className="character"
-                      alt="Image 2"
-                    />
-                  </div>
-                </div>
-                <h2 className="experience-sub-title project-title">Weather</h2>
-                <div className="btn-container">
-                  <button
-                    className="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/'"
-                  >
-                    Github
-                  </button>
-                  <button
-                    className="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/'"
-                  >
-                    Live Demo
-                  </button>
-                </div>
-              </div>
-            </Tilt>
-            {/* Third project */}
-            <Tilt>
-              <div
-                className="details-container color-container animate"
-                style={{ "--i": 2 }}
-              >
-                <div className="article-container">
-                  <div className="card">
-                    <div className="wrapper">
-                      <img
-                        src="./assets/pok.png"
-                        className="cover-image "
-                        alt="Image 1"
-                      />
-                    </div>
-                    <img
-                      src="./assets/howerpok.png"
-                      className="character"
-                      alt="Image 2"
-                    />
-                  </div>
-                </div>
-                <h2 className="experience-sub-title project-title">
-                  Pokemon Cards
-                </h2>
-                <div className="btn-container">
-                  <button
-                    className="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/'"
-                  >
-                    Github
-                  </button>
-                  <button
-                    className="btn btn-color-2 project-btn"
-                    onclick="location.href='https://github.com/'"
-                  >
-                    Live Demo
-                  </button>
-                </div>
-              </div>
-            </Tilt>
+          <div className="about-containers vishal-colum">
+            <ProjectCard
+              imgSrc="./assets/venom.jpg"
+              characterSrc="./assets/ven.png"
+              title="Movies Review"
+              githubLink="https://github.com/vishal-React?tab=repositories"
+              demoLink="https://github.com/"
+            />
+            <ProjectCard
+              imgSrc="./assets/noodlesBack.png"
+              characterSrc="./assets/noodle.png"
+              title="Food Delivery"
+              githubLink="https://github.com/vishal-React?tab=repositories"
+              demoLink="https://github.com/"
+            />
+            <ProjectCard
+              imgSrc="./assets/pok.png"
+              characterSrc="./assets/howerpok.png"
+              title="Pokemon Cards"
+              githubLink="https://github.com/vishal-React?tab=repositories"
+              demoLink="https://github.com/"
+            />
+            <ProjectCard
+              imgSrc="./assets/todo.png"
+              characterSrc="./assets/topng.png"
+              title="To-Do-List"
+              githubLink="https://github.com/vishal-React?tab=repositories"
+              demoLink="https://github.com/"
+            />
+            <ProjectCard
+              imgSrc="./assets/we.png"
+              characterSrc="./assets/clo.png"
+              title="Weather"
+              githubLink="https://github.com/vishal-React?tab=repositories"
+              demoLink="https://github.com/"
+            />
           </div>
-        </div>
-        <div className="details-container color-container animate">
-        <Tilt>
-          <div className="article-container">
-            <div>
-              <div className="card">
-                <div className="wrapper">
-                  <img
-                    src="./assets/venom.jpg"
-                    className="cover-image "
-                    alt="Image 1"
-                  />
-                </div>
-                <img
-                  src="./assets/ven.png"
-                  className="character"
-                  alt="Image 2"
-                />
-              </div>
-            </div>
-          </div>
-          <h2 className="experience-sub-title project-title">Movies Review</h2>
-          <div className="btn-container">
-            <button
-              className="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/'"
-            >
-              Github
-            </button>
-            <button
-              className="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/'"
-            >
-              Live Demo
-            </button>
-          </div>
-        </Tilt>
         </div>
       </section>
     </>

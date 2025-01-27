@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { TbRosetteDiscountCheckFilled } from "react-icons/tb";
 import { RiArrowDownDoubleLine } from "react-icons/ri";
+import { TbRosetteDiscountCheckFilled } from "react-icons/tb";
 
 const Experience = () => {
   useEffect(() => {
@@ -20,10 +20,10 @@ const Experience = () => {
       });
     };
   }, []);
-  
+
   return (
     <>
-      <section id="experience" className="sec-1 show-animate">
+      <section id="experience" className="my-margin sec-1 show-animate">
         <p className="section__text__p1 sec-3">Explore My</p>
         <h1 className="title sec-3">Experience</h1>
         <div className="experience-details-container">
@@ -49,7 +49,9 @@ const Experience = () => {
                   <TbRosetteDiscountCheckFilled className="change sec-6 animates" />
                   <div>
                     <h3>SASS</h3>
-                    <pre className="f-Size">Basic             </pre>
+                    <pre className="f-Size">
+                      Basic &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </pre>
                   </div>
                 </article>
                 <article className="sec-5 animates">
@@ -114,8 +116,8 @@ const Experience = () => {
           <RiArrowDownDoubleLine className="icon arrow " />
         </a>
       </section>
-      <section class="parallax-2 ">
-        <p className="work sec-3">let's work together !</p>
+      <section className="parallax-2 ">
+        <p className="sec-3 works">let's work together !</p>
       </section>
     </>
   );
