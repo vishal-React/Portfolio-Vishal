@@ -1105,3 +1105,6 @@ section .animates {
 .right {
   padding-left: 15px;
 }
+.new-padding{
+  padding-top: 2rem;
+}

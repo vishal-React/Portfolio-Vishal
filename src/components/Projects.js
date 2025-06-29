@@ -76,14 +76,14 @@ const Projects = () => {
               characterSrc="./assets/ven.png"
               title="Movies Review"
               githubLink="https://github.com/vishal-React?tab=repositories"
-              demoLink="https://github.com/"
+              demoLink="https://movies-review-vishal-gupta.netlify.app/"
             />
             <ProjectCard
               imgSrc="./assets/noodlesBack.png"
               characterSrc="./assets/noodle.png"
               title="Food Delivery"
               githubLink="https://github.com/vishal-React?tab=repositories"
-              demoLink="https://github.com/"
+              demoLink="https://fooddelivery-vishal.netlify.app/"
             />
             <ProjectCard
               imgSrc="./assets/pok.png"
@@ -97,14 +97,14 @@ const Projects = () => {
               characterSrc="./assets/topng.png"
               title="To-Do-List"
               githubLink="https://github.com/vishal-React?tab=repositories"
-              demoLink="https://github.com/"
+              demoLink="https://github.com/vishal-React?tab=repositories"
             />
             <ProjectCard
               imgSrc="./assets/we.png"
               characterSrc="./assets/clo.png"
               title="Weather"
               githubLink="https://github.com/vishal-React?tab=repositories"
-              demoLink="https://github.com/"
+              demoLink="https://github.com/vishal-React?tab=repositories"
             />
           </div>
         </div>

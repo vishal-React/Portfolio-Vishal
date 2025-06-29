@@ -39,10 +39,10 @@ const About = () => {
               <div className="about-containers animate">
                 <div className="details-container">
                   <GiRibbonMedal className="change" />
-                  <h3>Hands-on Experience</h3>
+                  <h3>Experience</h3>
                   <p>
-                    5 Months <br />
-                    Frontend Development
+                    5 Months in<br />
+                    Full-Stack Development
                   </p>
                 </div>
                 <div className="details-container">
@@ -57,14 +57,14 @@ const About = () => {
               </div>
               <div className="text-container animate l-zoom">
                 <p>
-                  Passionate and detail-oriented Frontend Developer with
-                  hands-on experience in building responsive and user friendly
-                  web applications using modern web technologies like React.js,
-                  JavaScript, HTML5, and CSS3. Skilled in creating dynamic UI/UX
-                  designs, optimizing performance, and ensuring cross-browser
-                  compatibility. Excited to contribute to collaborative team
-                  environments, solve problems, and deliver innovative solutions
-                  that enhance user experience and drive business outcomes.
+                  Passionate and detail-oriented Full-Stack Developer with
+                  hands-on experience building scalable web applications using
+                  the MERN stack (MongoDB, Express.js, React.js, Node.js).
+                  Completed a full-stack internship at Code B Solutions, where I
+                  built and deployed an AI-powered dashboard using technologies
+                  like Next.js, OpenAI, AWS EC2, etc. Skilled in developing
+                  RESTful APIs, secure authentication, and dynamic user
+                  interfaces.
                 </p>
               </div>
             </div>

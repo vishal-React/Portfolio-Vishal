@@ -10,6 +10,7 @@ import Footer from "./Footer";
 import { FaGithub, FaReact } from "react-icons/fa";
 import { PiLinkedinLogoFill } from "react-icons/pi";
 import { Toaster } from "react-hot-toast";
+import Skills from "./Skills";
 
 const Portfolio = () => {
   const [showScroll, setShowScroll] = useState(false);
@@ -222,13 +223,14 @@ const Portfolio = () => {
             </button>
             <button className="animate-btn section__text__p2">
               <span>F</span>
-              <span>r</span>
-              <span>o</span>
-              <span>n</span>
+              <span>u</span>
+              <span>l</span>
+              <span>l</span>
+              <span>S</span>
               <span>t</span>
-              <span>e</span>
-              <span>n</span>
-              <span>d</span>
+              <span>a</span>
+              <span>c</span>
+              <span>k</span>
               <span className="blank-space"> </span>
               <span>D</span>
               <span>e</span>
@@ -265,6 +267,7 @@ const Portfolio = () => {
       <About />
       <Projects />
       <Experience />
+      <Skills />
       <Contact />
       <Footer />
       {/* toTop */}
